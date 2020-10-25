@@ -19,14 +19,11 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
-app.use(cors());
-/*
-{
+app.use(cors({
     origin: frontendClient,
     credentials: true
-}
+}));
 
-*/
 // authenticating routes via JsonWebToken
 app.use(jwt());
 
