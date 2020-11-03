@@ -12,7 +12,8 @@ const schema = new Schema({
     lost: { type: Number, default: 0 },
     points: { type: Number, default: 0 },
     conceded: { type: Number, default: 0 },
-    scored: { type: Number, default: 0 }
+    scored: { type: Number, default: 0 },
+    avatar: { type: String, default: '' },
 });
 
 schema.set('toJSON', {

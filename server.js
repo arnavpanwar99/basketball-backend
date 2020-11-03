@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
-const { frontendClient } = require('./config.json');
+const { frontendClient, localFrontendClient } = require('./config.json');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const jwt = require('./helpers/jwt');
@@ -10,6 +10,7 @@ const errorHandler = require('./helpers/errorHandler');
 const matchRoutes = require('./matches/routes');
 
 const PORT = process.env.PORT || 5000;
+const isLocal = !process.env.PORT;
 
 // cookie parser --> parse in the http cookie
 app.use(cookieParser());
@@ -18,9 +19,10 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+
 app.use(bodyParser.json());
 app.use(cors({
-    origin: frontendClient,
+    origin: isLocal ? localFrontendClient : frontendClient,
     credentials: true
 }));
 

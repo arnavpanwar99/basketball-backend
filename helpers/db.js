@@ -1,9 +1,14 @@
-const { connectionString } = require('../config.json');
+const { connectionString, localConnectionString } = require('../config.json');
 const mongoose = require('mongoose');
 const { userModel } = require('../users/model');
 const { matchModel } = require('../matches/model');
 
-mongoose.connect(process.env.MONGODB_URI || connectionString, {
+let url = connectionString;
+if(process.env.NODE_ENV === 'development'){
+    url = localConnectionString;
+}
+
+mongoose.connect(url, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,

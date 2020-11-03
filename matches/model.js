@@ -7,7 +7,8 @@ const schema = new Schema({
     wonByFirst: { type: Number, default: 0 },
     wonBySecond: { type: Number, default: 0 },
     scoredByFirst: { type: Number, default: 0 },
-    scoredBySecond: { type: Number, default: 0 }
+    scoredBySecond: { type: Number, default: 0 },
+    startedAt: { type: Number, default: 0 }
 });
 
 schema.set('toJSON', {
