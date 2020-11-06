@@ -8,6 +8,7 @@ const jwt = require('./helpers/jwt');
 const userRoutes = require('./users/routes');
 const errorHandler = require('./helpers/errorHandler');
 const matchRoutes = require('./matches/routes');
+const commonRoutes = require('./common/routes');
 
 const PORT = process.env.PORT || 5000;
 const isLocal = !process.env.PORT;
@@ -32,6 +33,7 @@ app.use(jwt());
 // api routes
 app.use('/users', userRoutes);
 app.use('/matches', matchRoutes);
+app.use('/common', commonRoutes);
 
 // error handling
 app.use(errorHandler);

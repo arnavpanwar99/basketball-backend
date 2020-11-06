@@ -4,11 +4,13 @@ const userServices = require('./services');
 
 const sendUser = (res, user, errorMessage) => {
     if(user){
-        res.cookie('token', user.token, {
-            maxAge: 7 * 24 * 60 * 60 * 1000,
-            httpOnly: true,
-            sameSite: 'lax'
-        });
+
+        // enable this to send user token as a cookie
+        // res.cookie('token', user.token, {
+        //     maxAge: 7 * 24 * 60 * 60 * 1000,
+        //     httpOnly: true,
+        //     sameSite: 'lax'
+        // });
         delete user.token;
         res.json(user);
     }else{
@@ -59,7 +61,6 @@ const current = ({ req, res, next }, sub = true) => {
     }else{
         id = req.params.id;
     };
-    console.log(id);
 
     userServices.getById(id).then(user => {
         if(user){

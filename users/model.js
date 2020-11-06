@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const schema = new Schema({
+const prevSchema = new Schema({
     username: { type: String, unique: true, required: true },
     hash: { type: String, required: true },
     firstName: { type: String, required: true },
@@ -15,6 +15,15 @@ const schema = new Schema({
     scored: { type: Number, default: 0 },
     avatar: { type: String, default: '' },
 });
+
+const schema = new Schema({
+    username: { type: String, unique: true, required: true },
+    hash: { type: String, required: true },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now },
+    avatar: { type: String, default: '' }
+})
 
 schema.set('toJSON', {
     virtuals: true,

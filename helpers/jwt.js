@@ -18,7 +18,11 @@ const jwt = () => expressJwt({
         '/matches/all',
         '/matches/create',
         '/matches/update',
-        '/users/update'
+        '/users/update',
+        '/matches/saveMatch',
+        '/matches/startMatch',
+        '/common/all',
+        '/common/twoPlayer'
     ]
 });
 

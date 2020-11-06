@@ -35,9 +35,29 @@ const updateMatch = (req, res, next) => {
     }).catch(err => next(err));
 }
 
+const startMatch = (req, res, next) => {
+
+    const { player1, player2, startedAt, endsAt } = req.body;
+    matchServices.startMatch({ player1, player2, startedAt, endsAt }).then(match => {
+        res.json({match});
+    }).catch(err => next(err));
+};
+
+const saveMatch = (req, res, next) => {
+
+    const { id, scoredByFirst, scoredBySecond } = req.body;
+    matchServices.saveMatch({ id, scoredByFirst, scoredBySecond }).then(match => {
+        res.json({
+            match
+        });
+    }).catch(err => next(err));
+};
+
 router.get('/single', getSingleMatch);
 router.get('/all', getAllMatches);
 router.post('/create', createMatch);
 router.put('/update', updateMatch);
+router.post('/startMatch', startMatch);
+router.put('/saveMatch', saveMatch);
 
 module.exports = router;
