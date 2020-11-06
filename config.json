@@ -2,6 +2,6 @@
     "secret": "sdfjkdfngkd7898fdsfsdf^*($%^*$",
     "connectionString": "mongodb+srv://arnav:arnavozil@cluster0.laaif.mongodb.net/testUsers?retryWrites=true&w=majority",
     "localConnectionString": "mongodb+srv://arnav:arnavozil@cluster0.laaif.mongodb.net/testUsersLocal?retryWrites=true&w=majority",
-    "frontendClient": "https://basketball-frontend.netlify.app",
+    "frontendClient": ["https://basketball-frontend.netlify.app", "https://basketball-frontend.vercel.app/"],
     "localFrontendClient": "http://localhost:3000"
 }
