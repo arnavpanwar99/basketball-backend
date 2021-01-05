@@ -13,26 +13,24 @@ This API provides two functionalities:
 #### `/users/name`
 #### `/users/current`
 #### `/users/:id`
-#### `/users`
+#### `/matches/single`
+#### `/matches/all`
+#### `/common/all`
+#### `/common/twoPlayer`
+
 ### /POST
 #### `/users/authenticate`
 #### `/users/register`
+#### `/matches/create`
+#### `/matches/startMatch`
 
 ### /PUT
 #### `/users/update`
+#### `/matches/update`
+#### `/matches/saveMatch`
 
 ### /DELETE
 #### `/users/:id`
-
-'/matches/single',
-'/matches/all',
-'/matches/create',
-'/matches/update',
-'/users/update',
-'/matches/saveMatch',
-'/matches/startMatch',
-'/common/all',
-'/common/twoPlayer'
 
 ## Note
 For the time being, almost all the routes are public, but depending on the business logic, their security can be changed to private (which will then require a httpOnly cookie to authenticate) from `helper/jwt.js`
