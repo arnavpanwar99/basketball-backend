@@ -1,7 +1,7 @@
 {
-    "secret": "sdfjkdfngkd7898fdsfsdf^*($%^*$",
-    "connectionString": "mongodb+srv://arnav:arnavozil@cluster0.laaif.mongodb.net/testUsers?retryWrites=true&w=majority",
-    "localConnectionString": "mongodb+srv://arnav:arnavozil@cluster0.laaif.mongodb.net/testUsersLocal?retryWrites=true&w=majority",
-    "frontendClient": ["https://basketball-frontend.netlify.app", "https://basketball-frontend.vercel.app/"],
-    "localFrontendClient": "http://localhost:3000"
+    "secret": "YOUR_SECRET_KEY",
+    "connectionString": "PRODUCTION_MONGODB_CONNECTION_STRING",
+    "localConnectionString": "DEVELOPMENT_MONGODB_CONNECTION_STRING",
+    "frontendClient": "URL_OF_FRONTEND_CLIENT",  // NEEDED FOR CORS
+    "localFrontendClient": "URL_OF_LOCALHOST_CLIENT"
 }
